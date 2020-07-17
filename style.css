@@ -1,0 +1,262 @@
+.bom{
+color: #e24c4c;
+color: #f3cc41;
+color: #7be776;
+color: #6960eb;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+}
+
+#container{
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#listing-menu{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  font-size: 300%;
+  overflow: hidden;
+  border-top-right-radius: 1.5%; 
+  border-bottom-right-radius: 1.5%;
+  transition: all .5s; 
+}
+
+.services-list,
+.cars-list,
+.jobs-list,
+.houses-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  color: white;
+  border: none;
+  transition: all .5s;
+}
+
+.fas-none{
+  display: none;
+}
+
+
+.fas{
+  font-size: 125%;
+  margin-bottom: 5%;
+}
+
+.arrow{
+  display: none;
+}
+
+.arrow-display{
+  display: inline-block;
+}
+
+.arrow1,
+.arrow2,
+.arrow3,
+.arrow4{
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-15%, -50%);
+}
+
+.services-list{
+  background: #fd7070;
+  position: relative;
+}
+.cars-list{
+  background: #fcd034;
+  position: relative;
+}
+.jobs-list{
+  background: #63ca5e;
+  position: relative;
+}
+.houses-list{
+  background: #18A0FA;
+  position: relative;
+}
+.services-list:hover{
+  background: #944242;
+}
+.cars-list:hover{
+  background: #977d1f;
+}
+.jobs-list:hover{
+  background: #41853e;
+}
+.houses-list:hover{
+  background: #0f6197;
+}
+
+#listing-content{
+  height: 100%;
+  width: 75%;
+}
+
+.box-content{
+  height: 100%;
+  padding: 3% 3%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  column-gap: 4.5%;
+  row-gap: 4.5%;
+  animation: slideFromRight 2s both;
+}
+
+@keyframes slideFromRight{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.listing-box{
+  width: 100%;
+  height: 100%;
+  border-radius: .7rem;
+  padding: 10% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.listing-box:hover{
+  transform: scale(1.1);
+}
+
+#service-box{
+  background-color: rgba(253, 112, 112, 0.4);
+}
+#car-box{
+  background-color: rgb(252, 208, 52, 0.4);
+}
+#job-box{
+  background-color: rgb(99, 202, 94, 0.4);
+}
+#house-box{
+  background-color: rgb(24, 160, 250, 0.4);
+}
+
+.listing-box > div{
+  border-radius: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.line1{
+  height: 7%;
+  width: 100%;
+}
+
+.line2{
+  height: 7%;
+  width: 65%;
+}
+
+#service-box > div{
+  background-color: #fd7070;
+}
+#car-box > div{
+  background-color: #fcd034;
+}
+#job-box > div{
+  background-color: #63ca5e;
+}
+#house-box > div{
+  background-color: #18A0FA;
+}
+
+@media only screen and (max-width: 1100px){
+  
+  #container{
+    max-width: 100vw;
+    height: auto;
+    display: block;
+  }
+  
+  #listing-menu{
+    height: 85vh;
+    width: 100%;
+    border-top-right-radius: 0; 
+    border-bottom-right-radius: 0; 
+    margin-bottom: 2.5%;
+    position: absolute;
+    z-index: 1;
+    transition: all .5s;
+  }
+
+  .listing-menu-toggle{
+    height: 10vh !important;
+    transition: all .5s;
+    position: sticky !important;
+    top: 0;
+  }
+
+  .services-list:hover{
+    background: #fd7070;
+  }
+  .cars-list:hover{
+    background: #fcd034;
+  }
+  .jobs-list:hover{
+    background: #63ca5e;
+  }
+  .houses-list:hover{
+    background: #18A0FA;
+  }
+
+  #listing-content{
+    width: 100%;
+    height: 110rem;
+    display: none;
+  }
+
+  .listing-content-display{
+    display: block !important;
+  }
+  
+  .box-content{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 4.5%;
+    row-gap: 1.5%;
+    height: 100%;
+    overflow: visible;
+  }
+  
+  .listing-box{
+    height: 30vh;
+    border-radius: .7rem;
+    padding: 10% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .listing-box:hover{
+    transform: none;
+  }
+}
